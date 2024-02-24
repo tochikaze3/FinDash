@@ -1,15 +1,15 @@
 import React from 'react';
+import NavBar from './Navbar'
 import { Container, Box, Paper, Typography, ThemeProvider, Styled } from "@mui/material";
 
 
 const Dashboard = () => {
   return (
+  
     <Container maxWidth="sm" sx={{ bgcolor: "#000", height: "50vh", marginTop: "100px" }} >
+          <NavBar/>
         
-        <nav>
-          
-      </nav>
-        
+      
         <Box component="section" sx={{ p:1, my:1 }}>
             <Paper >
       <Typography variant = "subtitle1"  sx={{ textAlign: "center", color: "primary.main"}}>
