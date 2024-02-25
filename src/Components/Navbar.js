@@ -33,7 +33,7 @@ const NavBar = () => {
         >
           <ArrowBackIcon />
         </IconButton>
-        <Button color="inherit" onClick={handleButtonClick}>Custom Button</Button>
+        <Button color="inherit" onClick={handleButtonClick}>Show Details</Button>
         <IconButton
           edge="end"
           color="inherit"

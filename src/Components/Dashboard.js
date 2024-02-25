@@ -1,17 +1,15 @@
 import React from 'react';
-import NavBar from './Navbar'
-import { Container, Box, Paper, Typography, ThemeProvider, Styled } from "@mui/material";
+import Navbar from './Navbar'
+import { Container, Box, Paper, Typography } from "@mui/material";
 
 
 const Dashboard = () => {
   return (
   
     <Container maxWidth="sm" sx={{ bgcolor: "#000", height: "50vh", marginTop: "100px" }} >
-          <NavBar/>
-        
-      
+          <Navbar/>      
         <Box component="section" sx={{ p:1, my:1 }}>
-            <Paper >
+        <Paper sx={{ maxWidth: 150, mx: 'auto', p: -1 }}>
       <Typography variant = "subtitle1"  sx={{ textAlign: "center", color: "primary.main"}}>
         Welcome, Sophia
       </Typography>
@@ -26,7 +24,7 @@ const Dashboard = () => {
 
 
     <Box  sx={{ p:1}}>
-        <Paper background-color='' elevation = '2' variant='outlined' square={false} >
+        <Paper background-color='' elevation = '2' variant='outlined' square={false} sx={{maxWidth: 300, mx: 'auto'}} >
             <Typography variant = "h1"  sx={{my:1, textAlign: "center", color: "primary.main"}}>
        -$125,275.00
       </Typography>
