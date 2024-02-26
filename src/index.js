@@ -9,12 +9,12 @@ import {  createTheme, ThemeProvider} from "@mui/material";
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#FF5733', 
+      main:"#00324d" , 
     },
 
-      secondary: {  main: '#E0C2FF',
-      light: '#F5EBFF',
-      contrastText: '#47008F',
+      secondary: {  main: '#00324d',
+      light: "#bbdde6",
+      contrast: '#D6D6D6',
       },
  },
       typography:{
@@ -30,6 +30,16 @@ const theme = createTheme({
         },
  
         h3: {
+          fontSize: "1.5rem",
+          fontWeight: "600",
+        },
+
+        h5: {
+          fontSize: "1.2rem",
+          fontWeight: "400",
+        },
+
+        h6: {
           fontSize: "1.5rem",
           fontWeight: "600",
         },

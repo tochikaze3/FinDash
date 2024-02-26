@@ -7,8 +7,8 @@ function App() {
     <div className="App">      
 <BrowserRouter>
 <Routes>
-  <Route index element= {<Login />} />
-  <Route Path = "/Dashboard" component={Dashboard}   />
+  <Route index element= {<Dashboard />} />
+  <Route Path = "/Login"  element= {<Login />} />
 </Routes>
 </BrowserRouter>
     </div>

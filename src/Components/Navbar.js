@@ -5,6 +5,7 @@ import IconButton from '@mui/material/IconButton';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import SearchIcon from '@mui/icons-material/Search';
 import Button from '@mui/material/Button';
+import { Typography } from '@mui/material';
 
 const NavBar = () => {
   const handleBackButtonClick = () => {
@@ -33,7 +34,7 @@ const NavBar = () => {
         >
           <ArrowBackIcon />
         </IconButton>
-        <Button color="inherit" onClick={handleButtonClick}>Show Details</Button>
+        <Button color="inherit" onClick={handleButtonClick}><Typography variant='subtitle2' sx={{color: "secondary.light"}}>Show Details</Typography></Button>
         <IconButton
           edge="end"
           color="inherit"
