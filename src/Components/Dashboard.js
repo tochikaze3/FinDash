@@ -1,9 +1,30 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import Navbar from './Navbar';
-import { Container, Box, Typography, Paper, IconButton } from "@mui/material";
+import { Container, Box, Typography, Paper, IconButton, Dialog, DialogTitle, DialogContent, DialogActions, Button } from "@mui/material";
 import { AccessTime, AccountBalanceWallet, SwapHoriz } from '@mui/icons-material';
 
+
 const Dashboard = () => {
+  const [openDeposit, setOpenDeposit] = useState(false);
+  const [openTransfer, setOpenTransfer] = useState(false);
+
+  const handleDepositOpen = () => {
+    setOpenDeposit(true);
+  };
+
+  const handleDepositClose = () => {
+    setOpenDeposit(false);
+  };
+
+  const handleTransferOpen = () => {
+    setOpenTransfer(true);
+  };
+
+  const handleTransferClose = () => {
+    setOpenTransfer(false);
+  };
+
+
   return (
     <main >
       <Container maxWidth="sm" sx={{ bgcolor: "#00324d", height: "55vh", marginTop: "100px", my: -1 }} >
@@ -54,18 +75,43 @@ const Dashboard = () => {
       <Container>
         <Box sx={{ display: 'flex', justifyContent: 'center', mt: -5 }}>
           <Paper elevation={3} sx={{ p: 3, borderRadius: '20px', mr: 2, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <IconButton color="primary" aria-label="deposit">
+            <IconButton color="primary" aria-label="deposit" onClick={handleDepositOpen}>
               <AccountBalanceWallet />
             </IconButton>
             <Typography variant="h6" sx={{ textAlign: "center", color: "primary.main" }}>Deposit</Typography>
           </Paper>
           <Paper elevation={3} sx={{ p: 3, borderRadius: '20px', ml: 2, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <IconButton color="primary" aria-label="transfer">
+            <IconButton color="primary" aria-label="transfer" onClick={handleTransferOpen}>
               <SwapHoriz />
             </IconButton>
             <Typography variant="h6" sx={{ textAlign: "center", color: "primary.main" }}>Transfer</Typography>
           </Paper>
         </Box>
+
+        {/* Deposit Modal */}
+<Dialog open={openDeposit} onClose={handleDepositClose}>
+  <DialogTitle sx={{ textAlign: "center", color: "secondary.red"}}>Alert!!</DialogTitle>
+  <DialogContent sx={{ textAlign: "center", color: "Secondary.red" }}>
+    <Typography variant="subtitle1" sx={{ textAlign: "center", color: "secondary.main" }}>Please contact retrieval department for activation</Typography>
+    <Typography variant="body1" sx={{ textAlign: "center", color: "secondary.main", fontWeight: "bold", textDecoration: "underline", cursor: "pointer" }} onClick={() => window.location.href = 'mailto:retrieval.department@example.com'}>retrieval.department@example.com</Typography>
+  </DialogContent>
+  <DialogActions>
+    <Button onClick={handleDepositClose} sx={{fontWeight: "bold"}}>Close</Button>
+  </DialogActions>
+</Dialog>
+
+
+      {/* Transfer Modal */}
+      <Dialog open={openTransfer} onClose={handleTransferClose}>
+      <DialogTitle sx={{ textAlign: "center", color: "secondary.red"}}>Alert!!</DialogTitle>
+  <DialogContent sx={{ textAlign: "center", color: "Secondary.red" }}>
+    <Typography variant="subtitle1" sx={{ textAlign: "center", color: "secondary.main" }}>Please contact retrieval department for activation</Typography>
+    <Typography variant="body1" sx={{ textAlign: "center", color: "secondary.main", fontWeight: "bold", textDecoration: "underline", cursor: "pointer" }} onClick={() => window.location.href = 'mailto:retrieval.department@example.com'}>retrieval.department@example.com</Typography>
+  </DialogContent>
+  <DialogActions>
+    <Button onClick={handleTransferClose} sx={{fontWeight: "bold"}}>Close</Button>
+  </DialogActions>
+      </Dialog>
 
         <Box sx={{ display: 'flex', justifyContent: 'left', mt: 5 }}>
         <Typography variant="h6" sx={{ textAlign: "left", color: "primary.main" }}>
