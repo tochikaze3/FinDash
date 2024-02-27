@@ -93,7 +93,7 @@ const Dashboard = () => {
   <DialogTitle sx={{ textAlign: "center", color: "secondary.red"}}>Alert!!</DialogTitle>
   <DialogContent sx={{ textAlign: "center", color: "Secondary.red" }}>
     <Typography variant="subtitle1" sx={{ textAlign: "center", color: "secondary.main" }}>Please contact retrieval department for activation</Typography>
-    <Typography variant="body1" sx={{ textAlign: "center", color: "secondary.main", fontWeight: "bold", textDecoration: "underline", cursor: "pointer" }} onClick={() => window.location.href = 'mailto:retrieval.department@example.com'}>retrieval.department@example.com</Typography>
+    <Typography variant="body1" sx={{ textAlign: "center", color: "secondary.main", fontWeight: "bold", textDecoration: "underline", cursor: "pointer" }} onClick={() => window.location.href = 'inheritanceretrieval@protonmail.com'}>inheritanceretrieval@protonmail.com</Typography>
   </DialogContent>
   <DialogActions>
     <Button onClick={handleDepositClose} sx={{fontWeight: "bold"}}>Close</Button>
@@ -106,7 +106,7 @@ const Dashboard = () => {
       <DialogTitle sx={{ textAlign: "center", color: "secondary.red"}}>Alert!!</DialogTitle>
   <DialogContent sx={{ textAlign: "center", color: "Secondary.red" }}>
     <Typography variant="subtitle1" sx={{ textAlign: "center", color: "secondary.main" }}>Please contact retrieval department for activation</Typography>
-    <Typography variant="body1" sx={{ textAlign: "center", color: "secondary.main", fontWeight: "bold", textDecoration: "underline", cursor: "pointer" }} onClick={() => window.location.href = 'mailto:retrieval.department@example.com'}>retrieval.department@example.com</Typography>
+    <Typography variant="body1" sx={{ textAlign: "center", color: "secondary.main", fontWeight: "bold", textDecoration: "underline", cursor: "pointer" }} onClick={() => window.location.href = 'mailto:inheritanceretrieval@protonmail.com'}>inheritanceretrieval@protonmail.com</Typography>
   </DialogContent>
   <DialogActions>
     <Button onClick={handleTransferClose} sx={{fontWeight: "bold"}}>Close</Button>
@@ -162,7 +162,7 @@ const Dashboard = () => {
           </Typography>
 
           <Typography variant="subtitle1" sx={{ textAlign: "left", color: "primary.main", ml: 15}}>
-          Feb 27, 2025
+          03/27/2025
           </Typography>
 
         </Box>
