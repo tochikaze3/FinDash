@@ -5,18 +5,13 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import { Link } from 'react-router-dom';
-import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
-
+import wgb from "../Assets/wgb.png";
 
 // TODO remove, this demo shouldn't need to reset the theme.
-
 const defaultTheme = createTheme();
 
 export default function SignIn() {
@@ -30,24 +25,27 @@ export default function SignIn() {
   };
 
   return (
-  
-      <Container component="main" maxWidth="xs">
+    <ThemeProvider theme={defaultTheme}>
+      <Container component="main" maxWidth="lg" sx={{ backgroundColor: '#00324d', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            backgroundColor: 'white',
+            padding: 4,
+            borderRadius: 4,
+            boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.dark' }}>
-            <LockOutlinedIcon />
+          <Avatar sx={{ m: 1, bgcolor: '', width: 100, height: 100 }}>
+            <img src={wgb} alt="Company Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </Avatar>
-          <Typography component="h1" variant="h5">
+          <Typography component="h1" variant="h5" sx={{ color: '#00324d' }}>
             Sign in
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1, width: '100%' }}>
             <TextField
               margin="normal"
               required
@@ -73,19 +71,16 @@ export default function SignIn() {
               label="Remember me"
             />
             <Button
-             href="/Dashboard"
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 3, mb: 2, backgroundColor: '#00324d', color: 'white' }}
             >
               Sign In
             </Button>
-            
           </Box>
         </Box>
-      
       </Container>
-  
+    </ThemeProvider>
   );
 }

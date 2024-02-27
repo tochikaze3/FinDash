@@ -10,7 +10,7 @@ const Dashboard = () => {
         <Navbar />
         <Box component="section" sx={{ p: 1, my: 1 }}>
           <Typography variant="subtitle1" sx={{ textAlign: "center", color: "secondary.contrast" }}>
-            Welcome, Sophia
+            Welcome, Michael Garcia
           </Typography>
         </Box>
 
@@ -86,7 +86,7 @@ const Dashboard = () => {
 
  <Box sx={{ display: 'flex', justifyContent: 'left', mt: 0 }}>
           <Typography variant="subtitle2" sx={{ textAlign: "left", color: "primary.main", ml: 6 }}>
-           Feb 12, 2024
+           Feb 27, 2024
           </Typography>
 
         </Box>
@@ -116,7 +116,7 @@ const Dashboard = () => {
           </Typography>
 
           <Typography variant="subtitle1" sx={{ textAlign: "left", color: "primary.main", ml: 15}}>
-          Feb 12, 2024
+          Feb 27, 2025
           </Typography>
 
         </Box>

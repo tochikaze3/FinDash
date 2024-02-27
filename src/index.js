@@ -4,7 +4,23 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {  createTheme, ThemeProvider} from "@mui/material";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Login from "./Components/Login";
+import Dashboard from "./Components/Dashboard";
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Login/>,
+  },
+  {
+    path: "/Dashboard",
+    element: <Dashboard/>,
+  },
+]);
 
 const theme = createTheme({
   palette: {
@@ -50,7 +66,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-    <App />
+    <RouterProvider router={router}/>
     </ThemeProvider>
   </React.StrictMode>
 );
