@@ -1,17 +1,26 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from './Components/Login';
 import Dashboard from './Components/Dashboard';
 
 function App() {
   return (
-    <div className="App">      
-<BrowserRouter>
-<Routes>
-  <Route index element= {<Login />} />
-  <Route Path = "/Login"  element= {<Login />} />
-</Routes>
-</BrowserRouter>
+   <Router> 
+    <div className="App">
+            
+     <Switch>
+         <Route exact Path = "/Login">
+             <Login/>
+          </Route>
+
+          <Route Path = "/Dashboard">
+             <Dashboard/>
+          </Route>
+     </Switch>
+      
+
     </div>
+    
+   </Router>
   );
 }
 
