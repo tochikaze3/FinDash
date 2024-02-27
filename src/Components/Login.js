@@ -25,7 +25,7 @@ export default function SignIn() {
   };
 
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={createTheme}>
       <Container component="main" maxWidth="lg" sx={{ backgroundColor: '#00324d', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <CssBaseline />
         <Box
@@ -39,13 +39,13 @@ export default function SignIn() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: '', width: 100, height: 100 }}>
+          <Avatar sx={{ m: 1, bgcolor: 'white', width: 100, height: 100 }}>
             <img src={wgb} alt="Company Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </Avatar>
-          <Typography component="h1" variant="h5" sx={{ color: '#00324d' }}>
+          <Typography component="h1" variant="h6" sx={{ color: '#00324d' }}>
             Sign in
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1, width: '100%' }}>
+          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1, width: '100%', color: '#00324d'}}>
             <TextField
               margin="normal"
               required
