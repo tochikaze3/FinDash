@@ -71,6 +71,7 @@ export default function SignIn() {
               label="Remember me"
             />
             <Button
+            component={Link} to="/Dashboard"
               type="submit"
               fullWidth
               variant="contained"
