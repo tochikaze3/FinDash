@@ -6,6 +6,7 @@ import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Box from '@mui/material/Box';
+import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -71,7 +72,7 @@ export default function SignIn() {
               label="Remember me"
             />
             <Button
-            component={Link} to="/Dashboard"
+           
               type="submit"
               fullWidth
               variant="contained"
