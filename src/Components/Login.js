@@ -28,7 +28,7 @@ export default function SignIn() {
     }
 
     try {
-      const response = await fetch('http://tochikaze.pythonanywhere.com/', {
+      const response = await fetch('http://tochikaze.pythonanywhere.com/Login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
