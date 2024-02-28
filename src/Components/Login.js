@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -6,27 +6,52 @@ import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import wgb from "../Assets/wgb.png";
 
-// TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
 export default function SignIn() {
-  const handleSubmit = (event) => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      username: data.get('username'),
-      password: data.get('password'),
-    });
+
+    // Form validation
+    if (!username || !password) {
+      setError('Please fill in both username and password');
+      return;
+    }
+
+    try {
+      const response = await fetch('http://localhost:5000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+      });
+
+      if (response.ok) {
+        // If login is successful, redirect to Dashboard or handle success accordingly
+        window.location.href = "/Dashboard";
+      } else {
+        // If login fails, handle error response
+        const responseData = await response.json();
+        setError(responseData.message || 'Login failed');
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      setError('An unexpected error occurred');
+    }
   };
 
   return (
-    <ThemeProvider theme={createTheme}>
+    <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="lg" sx={{ backgroundColor: '#00324d', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <CssBaseline />
         <Box
@@ -56,6 +81,8 @@ export default function SignIn() {
               name="username"
               autoComplete="username"
               autoFocus
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
             <TextField
               margin="normal"
@@ -66,13 +93,14 @@ export default function SignIn() {
               type="password"
               id="password"
               autoComplete="current-password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
             <Button
-             href="/Dashboard" 
               type="submit"
               fullWidth
               variant="contained"
@@ -80,6 +108,7 @@ export default function SignIn() {
             >
               Sign In
             </Button>
+            {error && <Typography sx={{ color: 'red' }}>{error}</Typography>} {/* Display error message if there is any */}
           </Box>
         </Box>
       </Container>
