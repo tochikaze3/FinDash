@@ -11,6 +11,10 @@ const NavBar = () => {
   const handleBackButtonClick = () => {
     // Handle back button click logic here
     console.log('Back button clicked!');
+
+    
+    // Simulated success
+    window.location.href = "/Login";
   };
 
   const handleSearchIconClick = () => {
