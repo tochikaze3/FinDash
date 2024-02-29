@@ -14,7 +14,7 @@ const NavBar = () => {
 
     
     // Simulated success
-    window.location.href = "/Login";
+    window.location.href = "/";
   };
 
   const handleSearchIconClick = () => {
