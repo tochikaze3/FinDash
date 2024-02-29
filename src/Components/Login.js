@@ -18,36 +18,16 @@ export default function SignIn() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const handleSubmit = async (event) => {
+  const handleFakeSubmit = (event) => {
     event.preventDefault();
-
-    // Form validation
+    // Simulate form submission without actually sending a request to the backend
     if (!username || !password) {
       setError('Please fill in both username and password');
       return;
     }
 
-    try {
-      const response = await fetch('http://tochikaze.pythonanywhere.com/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
-      });
-
-      if (response.ok) {
-        // If login is successful, redirect to Dashboard or handle success accordingly
-        window.location.href = "/Dashboard";
-      } else {
-        // If login fails, handle error response
-        const responseData = await response.json();
-        setError(responseData.message || 'Login failed');
-      }
-    } catch (error) {
-      console.error('Error during login:', error);
-      setError('An unexpected error occurred');
-    }
+    // Simulated success
+    window.location.href = "/Dashboard";
   };
 
   return (
@@ -71,7 +51,7 @@ export default function SignIn() {
           <Typography component="h1" variant="h6" sx={{ color: '#00324d' }}>
             Sign in
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1, width: '100%', color: '#00324d'}}>
+          <Box component="form" onSubmit={handleFakeSubmit} noValidate sx={{ mt: 1, width: '100%', color: '#00324d'}}>
             <TextField
               margin="normal"
               required
